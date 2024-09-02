@@ -1,0 +1,125 @@
+/* src/components/nav.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.navbar-logo-link {
+  text-decoration: none;
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo-link:hover {
+  color: #e5533d;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: left 0.3s ease;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-item:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.active {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 6px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-button {
+  padding: 6px 10px;
+  background-color: #ff6347;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.search-button i {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(1px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: left 0.3s ease;
+    padding-top: 60px; /* Adds some padding for the menu items */
+  }
+
+  .navbar-links.active {
+    left: 0;
+  }
+
+  .navbar-search {
+    display: none; /* Hide search bar on mobile for simplicity */
+  }
+}
